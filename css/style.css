@@ -1,0 +1,130 @@
+/* Start Global */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+:root {
+    --main-color: #337ab7;
+    --color: #eee;
+    --hover-color: #2196f3;
+    --con-width: 500px;
+}
+
+body {
+    background-color: var(--color);
+    
+}
+
+/* End Global */
+
+/* ----------------------------------------------------------------------------------------- */
+
+/* Start Card */
+
+.contener {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 700px;
+    height: var(--con-width);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    position: relative;
+}
+
+.card::before {
+    content: '';
+    background: url(../image/person-blue-shirt.png) no-repeat;
+    width: 124px;
+    height: 135px;
+    position: absolute;
+    top: -130px;
+    transform: scale(150%);
+}
+
+.card::after {
+    content: 'A+';
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: white;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    font-weight: 800;
+    right: 75px;
+    bottom: -25px;
+    transition: .5s .5s;
+}
+
+.contener .card:hover h1 {
+    color: var(--hover-color);
+}
+
+.card:hover::after{
+    opacity: .75;
+    background-color: var(--hover-color);
+}
+
+.contener .card h1 {
+    color: var(--main-color);
+    font-size: 3rem;
+    transition: .5s;
+}
+
+.contener .card h2 {
+    color: #3333338a;
+    font-size: 1.5rem;
+}
+
+hr {
+    height: 3px;
+    width: var(--con-width);
+    background-color: var(--color);
+    border: none;
+    margin: 30px auto;
+}
+
+.main .text {
+    width: var(--con-width);
+    background-color: var(--color);
+    margin-bottom: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+} 
+
+.main .text [aria-details="social"] {
+    font-weight: 600;
+}
+
+/* End Card */
+
+/* mobile screen */
+
+@media (max-width: 767px) {
+    :root {
+        --con-width: max-width(95%);
+    }
+    .card {
+        width: 90%;
+        padding: 15px;
+    }
+    .card div {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+}
